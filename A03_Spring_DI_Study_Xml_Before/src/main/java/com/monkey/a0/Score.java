@@ -10,6 +10,10 @@ public class Score {
 	private int scoreSum;
 	private double scoreAverage;
 	
+	public Score() {
+		this.init();
+	}
+	
 	public void init() {
 		hashMapScore = new HashMap<String, Integer>();
 		hashMapScore.put("korean", 0);
@@ -52,6 +56,10 @@ public class Score {
 	}
 	
 	public void showScore() {
+		String areaLocation = "Score";
+		
+		StaticMethod.showArea(areaLocation, StaticMethod.start);
+		
         Iterator<String> keys = this.hashMapScore.keySet().iterator();
         
         while( keys.hasNext() ){
@@ -62,6 +70,8 @@ public class Score {
         
         System.out.println("\nScore Sum: " + this.scoreSum);
         System.out.println("Score Average: " + this.scoreAverage);
+        
+        StaticMethod.showArea(areaLocation, StaticMethod.end);
 	}
 
 }

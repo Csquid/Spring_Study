@@ -1,15 +1,13 @@
 package com.monkey.a0;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
-
 public class Main {
 	public static void main(String[] args) {
+		Student human01 = new Student("jjy", 24);
 		
-		String configLocation = "classpath:applicationCTX.xml";
-		AbstractApplicationContext ctx = new GenericXmlApplicationContext(configLocation);
-		Student myStudent = ctx.getBean("Student", Student.class);
-		
-		
+		human01.setScore();
+		human01.showStudentInfo();
 	}
+	
 }
+
+

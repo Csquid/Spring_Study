@@ -1,7 +1,5 @@
 package com.monkey.a0;
 
-import java.util.Scanner;
-
 public class Student {
 	private Score nScoreClass; 
 	private String name;
@@ -24,33 +22,38 @@ public class Student {
 	}
 	
 	public void setScore() {
-		Scanner sc = new Scanner(System.in);
-		
 		nScoreClass.setScore();
 	}
-
-	private void showScore() {
-		nScoreClass.showScore();
-	}
+	
 	
 	public void showStudentInfo() {
+		String areaLocation = "Student";
+		
+		StaticMethod.showArea(areaLocation, StaticMethod.start);
+		
 		if(this.name != null) {
 			System.out.println("\nName: " + this.name);
 		} else {
-			System.out.println("Private Name");
+			System.out.println("ERROR Name Property");
 		}
 		if(this.age > 0) {
 			System.out.println("Age:  " + this.age);
-		}
-		else {
-			System.out.println("Private Age");
+		} else {
+			System.out.println("ERROR Age Property");
 		}
 		if(this.height > 0) {
 			System.out.println("Height: " + this.height);
 		} else {
-			System.out.println("Private Height");
+			System.out.println("ERROR Height Property");
 		}
+		
+		StaticMethod.showArea(areaLocation, StaticMethod.end);
 		
 		this.showScore();
 	}
+	
+	private void showScore() {
+		nScoreClass.showScore();
+	}
+	
 }
